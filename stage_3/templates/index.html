@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{app_name}}</title>
+</head>
+<body>
+    <h1>{{app_name}}</h1>
+    <form method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="gender">Gender:</label>
+        <input type="text" id="gender" name="gender"><br><br>
+        <label for="comment">Comment:</label><br>
+        <textarea id="comment" name="text" rows="4" cols="50"></textarea><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <h3> <b>Host: </b> {{hostname}}</h3>
+
+    <h2>Items in the Database:</h2>
+    <ul>
+        {% for item in all_data %}
+        <li>
+            <strong>Name:</strong> {{ item.name }}<br>
+            <strong>Gender:</strong> {{ item.gender }}<br>
+            <strong>Text:</strong> {{ item.text }}
+        </li>
+        {% endfor %}
+    </ul>
+    
+</body>
+</html>
